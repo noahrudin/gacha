@@ -1,24 +1,21 @@
-#Import creds and bot hookup
+#Bot hookup
 import discord
 from discord.ext import commands
 import asyncio
 import random
+#Only need if we move back to Google Sheets
 import gspread
 import pprint
 from oauth2client.service_account import ServiceAccountCredentials
+#
 from PIL import Image
 import requests
 from io import BytesIO
 import xlrd
 #=======
-DISCORD_TOKEN = 'NzA1ODY1MjYyODI1NzM0MjI0.Xq0tzw.6kCJDq-SkOUt6dX5uFEIbYrIEzI'
+DISCORD_TOKEN = 'NzA1ODY1MjYyODI1NzM0MjI0.Xq0-OQ.yqaqtZjQv2OB8ckCcxU_9L80Gf0'
 DISCORD_GUILD = 705865053689086032
 client = discord.Client()
-#gc = gspread.service_account('service_account.json')
-#pool = gc.open_by_url('https://docs.google.com/spreadsheets/d/1L0yZMFHj68ZjQS-Yxduh8P0f1HYBJNiv_D4KEZQaQ7k/edit?usp=sharing')
-#bfSheet = pool.get_worksheet(0)
-#bbSheet = pool.get_worksheet(1)
-#nbSheet = pool.get_worksheet(2)
 loc = ('SummonPool.xlsx')
 wb = xlrd.open_workbook(loc)
 bfSheet = wb.sheet_by_index(0)
@@ -221,7 +218,7 @@ async def on_message(message):
                 url1 = 4
                 colorVar = 0x0ffd500
                 #want to select a random gold from column list
-                randCol = random.randint(0,NUM_BF_GOLDS-1)
+                randCol = random.randint(0,NUM_BB_GOLDS-1)
             elif randSeed >=15 and randSeed < 77:
                 id1 = 6
                 name1 = 7
@@ -267,8 +264,8 @@ async def on_message(message):
             appendedStr += '\n'
         summaryEmbed = discord.Embed(title='Results: ', description = appendedStr, color=0xb52700) 
         await message.channel.send(embed=summaryEmbed)  
-    else:
-        await message.channel.send(content = "Invalid command! Try \n`.multi nb` for Normal Banner Summons,\n`.multi bf` for Blazing Festival Summons, and \n`.multi bb` for Blazing Bash Summons.")
+    #elif '.multi' in message.content.lower():
+        #await message.channel.send(content = "Invalid command! Try \n`.multi nb` for Normal Banner Summons,\n`.multi bf` for Blazing Festival Summons, and \n`.multi bb` for Blazing Bash Summons.")
     
 async def get_concat_h(im1, im2):
     dst = Image.new('RGB', (im1.width + im2.width, im1.height))
