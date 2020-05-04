@@ -14,7 +14,7 @@ import requests
 from io import BytesIO
 import xlrd
 #=======
-DISCORD_TOKEN = 'NzA1ODY1MjYyODI1NzM0MjI0.Xq3wIA.AXQpm_UBlEznTau5NqU0q2Cub-M'
+DISCORD_TOKEN = 'NzA1ODY1MjYyODI1NzM0MjI0.Xq4uLg.tY_XPcxczdqWmKJzM1X7jt-vgRE'
 DISCORD_GUILD = 705865053689086032
 client = discord.Client()
 loc = ('SummonPool.xlsx')
@@ -30,17 +30,17 @@ NUM_BB_GOLDS = 120
 NUM_BFS = 53
 NUM_BBS = 47
 #Used for changing rates
-ODDS_BF_GOLD = 38 #default 15
+ODDS_BF_GOLD = 15 #default 15
 ODDS_BF_SILVER = 62 #default 62
-ODDS_BF_BRONZE = 0  #default 23
+ODDS_BF_BRONZE = 23  #default 23
 
-ODDS_BB_GOLD = 38  #default 15
+ODDS_BB_GOLD = 15 #default 15
 ODDS_BB_SILVER = 62  #default 62
-ODDS_BB_BRONZE = 0  #default 23
+ODDS_BB_BRONZE = 23 #default 23
 
-ODDS_NB_GOLD = 38  #default 15
+ODDS_NB_GOLD = 15  #default 15
 ODDS_NB_SILVER = 62  #default 62
-ODDS_NB_BRONZE = 0  #default 23
+ODDS_NB_BRONZE = 23  #default 23
 #WIP
 #IMG_LIST = []
 MULTI_LIST = ['','','','','','','','','','']
@@ -173,7 +173,7 @@ async def nbMulti(author, message):
     await message.channel.send(embed=summaryEmbed)
     lock = "unlocked"
     await toggleLock(lock)
-  
+
 @client.event
 async def bfMulti(author, message):
     i = 1
@@ -188,9 +188,9 @@ async def bfMulti(author, message):
             url1 = 4
             colorVar = 0x0ffd500
             #want to select a random gold from column list
-            #randCol = random.randint(0,NUM_BF_GOLDS-1)
+            randCol = random.randint(0,NUM_BF_GOLDS-1)
             #select a random bf from the list
-            randCol = random.randint(NUM_BF_GOLDS-NUM_BFS,NUM_BF_GOLDS-1)
+            #randCol = random.randint(NUM_BF_GOLDS-NUM_BFS,NUM_BF_GOLDS-1)
         elif randSeed >=ODDS_BF_GOLD and randSeed < (ODDS_BF_SILVER + ODDS_BF_GOLD):
             id1 = 6
             name1 = 7
@@ -236,7 +236,7 @@ async def bfMulti(author, message):
     await message.channel.send(embed=summaryEmbed)
     lock = "unlocked"
     await toggleLock(lock)
-  
+
 @client.event
 async def bbMulti(author, message):
     i = 1
@@ -251,9 +251,9 @@ async def bbMulti(author, message):
             url1 = 4
             colorVar = 0x0ffd500
             #want to select a random gold from column list
-            #randCol = random.randint(0,NUM_BB_GOLDS-1)
+            randCol = random.randint(0,NUM_BB_GOLDS-1)
             #guaranteed BB unit on gold
-            randCol = random.randint(NUM_BB_GOLDS-NUM_BBS,NUM_BB_GOLDS-1)
+            #randCol = random.randint(NUM_BB_GOLDS-NUM_BBS,NUM_BB_GOLDS-1)
         elif randSeed >=ODDS_BB_GOLD and randSeed < (ODDS_BB_SILVER + ODDS_BB_GOLD):
             id1 = 6
             name1 = 7
@@ -262,7 +262,7 @@ async def bbMulti(author, message):
             url1 = 10
             colorVar = 0xd4d4d4
             randCol = random.randint(0,NUM_SILVERS-1)
-        elif randSeed (ODDS_BB_SILVER + ODDS_BB_GOLD):
+        elif randSeed >= (ODDS_BB_SILVER + ODDS_BB_GOLD):
             id1 = 12
             name1 = 13
             desc1 = 14
@@ -300,7 +300,6 @@ async def bbMulti(author, message):
     lock = "unlocked"
     await toggleLock(lock)
     
-
 @client.event
 async def on_ready():
     print('Logged in as')
