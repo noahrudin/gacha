@@ -14,7 +14,7 @@ import requests
 from io import BytesIO
 import xlrd
 #=======
-DISCORD_TOKEN = 'NzA1ODY1MjYyODI1NzM0MjI0.Xq4uLg.tY_XPcxczdqWmKJzM1X7jt-vgRE'
+DISCORD_TOKEN = 'NzA1ODY1MjYyODI1NzM0MjI0.Xq95Fg.kSbAWYc0TeXVWk4JiK8iTBBYeMg'
 DISCORD_GUILD = 705865053689086032
 client = discord.Client()
 loc = ('SummonPool.xlsx')
@@ -28,7 +28,7 @@ NUM_NB_GOLDS = 72
 NUM_BF_GOLDS = 127
 NUM_BB_GOLDS = 120
 NUM_BFS = 53
-NUM_BBS = 47
+NUM_BBS = 48
 #Used for changing rates
 ODDS_BF_GOLD = 15 #default 15
 ODDS_BF_SILVER = 62 #default 62
@@ -37,6 +37,8 @@ ODDS_BF_BRONZE = 23  #default 23
 ODDS_BB_GOLD = 15 #default 15
 ODDS_BB_SILVER = 62  #default 62
 ODDS_BB_BRONZE = 23 #default 23
+#4 featured rn
+ODDS_BB_FEATURED = 2 #1% random
 
 ODDS_NB_GOLD = 15  #default 15
 ODDS_NB_SILVER = 62  #default 62
@@ -241,9 +243,18 @@ async def bfMulti(author, message):
 async def bbMulti(author, message):
     i = 1
     while i < 11:
-        randSeed=random.randint(0,(ODDS_BB_GOLD + ODDS_BB_SILVER + ODDS_BB_BRONZE)-1)
+        #randSeed=random.randint(0,(ODDS_BB_GOLD + ODDS_BB_SILVER + ODDS_BB_BRONZE)-1)
+        randSeed=random.randint(0,(ODDS_BB_GOLD + ODDS_BB_SILVER + ODDS_BB_BRONZE + ODDS_BB_FEATURED)-1)
         #15% gold, 62% silver, 23% bronze
-        if randSeed < ODDS_BB_GOLD:
+        if randSeed <= ODDS_BB_FEATURED:
+            id1 = 0
+            name1 = 1
+            desc1 = 2
+            star1 = 3
+            url1 = 4
+            colorVar = 0x0ffd500
+            randCol = random.randint(116,119)
+        if randSeed < ODDS_BB_GOLD and randSeed > ODDS_BB_FEATURED:
             id1 = 0
             name1 = 1
             desc1 = 2
@@ -295,7 +306,7 @@ async def bbMulti(author, message):
     for x in MULTI_LIST:
         appendedStr += x
         appendedStr += '\n'
-    summaryEmbed = discord.Embed(title='Blazing Bash results for ' + author + ": ", description = appendedStr, color=0xb52700) 
+    summaryEmbed = discord.Embed(title='Blazing Bash featured results for ' + author + ": ", description = appendedStr, color=0xb52700) 
     await message.channel.send(embed=summaryEmbed)
     lock = "unlocked"
     await toggleLock(lock)
