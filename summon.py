@@ -14,7 +14,7 @@ import requests
 from io import BytesIO
 import xlrd
 #=======
-DISCORD_TOKEN = 'NzA1ODY1MjYyODI1NzM0MjI0.XsLR_Q.hzGdzgitHBLdzHLTMD5QLQstXO0'
+DISCORD_TOKEN = 'NzA1ODY1MjYyODI1NzM0MjI0.Xsf3sQ.fDCfyofvG1CB6bBkbRC23mPTz70'
 DISCORD_GUILD = 705865053689086032
 client = discord.Client()
 loc = ('SummonPool.xlsx')
@@ -342,7 +342,6 @@ async def specialMulti(author, message):
         randSeed=random.randint(0,(ODDS_SPECIAL_GOLD + ODDS_SPECIAL_SILVER + ODDS_SPECIAL_BRONZE + ODDS_SPECIAL_FEATURED)-1)
         #15% gold, 62% silver, 23% bronze
         if randSeed <= ODDS_SPECIAL_FEATURED:
-            print("Rolled featured!")
             id1 = 0
             name1 = 1
             desc1 = 2
