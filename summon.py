@@ -68,7 +68,7 @@ async def toggleLock(lock):
 
 @client.event
 async def on_message(message):
-    if message.channel.name  == 'commands' or message.channel.name  == 'private-test':
+    if message.channel.name  == 'summon-simulator' or message.channel.name  == 'private-test' or message.channel.name  == 'commands':
         # we do not want the bot to reply to itself
         if message.author == client.user:
             return
