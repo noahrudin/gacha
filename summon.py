@@ -131,7 +131,7 @@ async def on_message(message):
                 return
             
         if message.content==('=help'):
-            await message.channel.send(content = "Try \n`.multi nb` for Normal Banner Summons,\n`.multi bf` for Blazing Festival Summons, \n`.multi bb` for Blazing Bash Summons, and \n `.multi special` for 7-star summon. \nOnly one multi at a time!")
+            await message.channel.send(content = "Try \n`=multi nb` for Normal Banner Summons,\n`=multi bf` for Blazing Festival Summons,\n`=multi bb` for Blazing Bash Summons, and\n `=multi special` for 7-star summon.\nOnly one multi at a time!")
 
 
 @client.event
