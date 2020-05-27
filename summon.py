@@ -68,75 +68,75 @@ async def toggleLock(lock):
 
 @client.event
 async def on_message(message):
-    if message.channel.name  == 'summon-simulator':
+    #if message.channel.name  == 'summon-simulator' or message.channel.name  == 'private-test':
         ## or message.channel.name  == 'private-test' or message.channel.name  == 'commands'
         # we do not want the bot to reply to itself
-        if message.author == client.user:
+    if message.author == client.user:
+        return
+    lock = LOCK
+
+    if message.content==('=multi nb'):
+        if LOCK == "unlocked":
+            lock = "unlocked"
+            await toggleLock(lock)
+            lock = "locked"
+            introMessage = await message.channel.send('Normal Banner multi-summon for {0.name}:'.format(message.author))
+            author = str(message.author)
+            await nbMulti(author, message)
+            await introMessage.delete()
+        else:
+            waitMessage = await message.channel.send('Please wait for the current multi-summon to complete!')
+            await waitMessage.delete(delay = 3)
             return
-        lock = LOCK
+    
+    if message.content==('=multi bf'):
+        if LOCK == "unlocked":
+            lock = "unlocked"
+            await toggleLock(lock)
+            lock = "locked"
+            introMessage = await message.channel.send('Blazing Festival multi-summon for {0.name}:'.format(message.author))
+            author = str(message.author)
+            await bfMulti(author, message)
+            await introMessage.delete()
+        else:
+            waitMessage = await message.channel.send('Please wait for the current multi-summon to complete!')
+            await waitMessage.delete(delay = 3)
+            return
+    
+    if message.content==('=multi bb'):
+        if LOCK == "unlocked":
+            lock = "unlocked"
+            await toggleLock(lock)
+            lock = "locked"
+            introMessage = await message.channel.send('Blazing Bash multi-summon for {0.name}:'.format(message.author))
+            author = str(message.author)
+            await bbMulti(author, message)
+            await introMessage.delete()
+        else:
+            waitMessage = await message.channel.send('Please wait for the current multi-summon to complete!')
+            await waitMessage.delete(delay = 3)
+            return
 
-        if message.content==('=multi nb'):
-            if LOCK == "unlocked":
-                lock = "unlocked"
-                await toggleLock(lock)
-                lock = "locked"
-                introMessage = await message.channel.send('Normal Banner multi-summon for {0.name}:'.format(message.author))
-                author = str(message.author)
-                await nbMulti(author, message)
-                await introMessage.delete()
-            else:
-                waitMessage = await message.channel.send('Please wait for the current multi-summon to complete!')
-                await waitMessage.delete(delay = 3)
-                return
+    if message.content==('=multi special'):
+        if LOCK == "unlocked":
+            lock = "unlocked"
+            await toggleLock(lock)
+            lock = "locked"
+            introMessage = await message.channel.send('Special 7* multi-summon for {0.name}:'.format(message.author))
+            author = str(message.author)
+            await specialMulti(author, message)
+            await introMessage.delete()
+        else:
+            waitMessage = await message.channel.send('Please wait for the current multi-summon to complete!')
+            await waitMessage.delete(delay = 3)
+            return
         
-        if message.content==('=multi bf'):
-            if LOCK == "unlocked":
-                lock = "unlocked"
-                await toggleLock(lock)
-                lock = "locked"
-                introMessage = await message.channel.send('Blazing Festival multi-summon for {0.name}:'.format(message.author))
-                author = str(message.author)
-                await bfMulti(author, message)
-                await introMessage.delete()
-            else:
-                waitMessage = await message.channel.send('Please wait for the current multi-summon to complete!')
-                await waitMessage.delete(delay = 3)
-                return
-        
-        if message.content==('=multi bb'):
-            if LOCK == "unlocked":
-                lock = "unlocked"
-                await toggleLock(lock)
-                lock = "locked"
-                introMessage = await message.channel.send('Blazing Bash multi-summon for {0.name}:'.format(message.author))
-                author = str(message.author)
-                await bbMulti(author, message)
-                await introMessage.delete()
-            else:
-                waitMessage = await message.channel.send('Please wait for the current multi-summon to complete!')
-                await waitMessage.delete(delay = 3)
-                return
-
-        if message.content==('=multi special'):
-            if LOCK == "unlocked":
-                lock = "unlocked"
-                await toggleLock(lock)
-                lock = "locked"
-                introMessage = await message.channel.send('Special 7* multi-summon for {0.name}:'.format(message.author))
-                author = str(message.author)
-                await specialMulti(author, message)
-                await introMessage.delete()
-            else:
-                waitMessage = await message.channel.send('Please wait for the current multi-summon to complete!')
-                await waitMessage.delete(delay = 3)
-                return
-            
-        if message.content==('=help'):
-            await message.channel.send(content = "Try \n`=multi nb` for Normal Banner Summons,\n`=multi bf` for Blazing Festival Summons,\n`=multi bb` for Blazing Bash Summons, and\n`=multi special` for 7-star summon.\nOnly one multi at a time!")
-        
-        if '=' in message.content:
-            if message.content!=('=help') and message.content!=('=multi bb') and message.content!=('=multi bf') and message.content!=('=multi nb') and message.content!=('=multi special'):
-                await message.channel.send(content = "Incorrect command! Type `=help` for commands.")
+    if message.content==('=help'):
+        await message.channel.send(content = "Try \n`=multi nb` for Normal Banner Summons,\n`=multi bf` for Blazing Festival Summons,\n`=multi bb` for Blazing Bash Summons, and\n`=multi special` for 7-star summon.\nOnly one multi at a time!")
+    
+    if '=' in message.content:
+        if message.content!=('=help') and message.content!=('=multi bb') and message.content!=('=multi bf') and message.content!=('=multi nb') and message.content!=('=multi special'):
+            await message.channel.send(content = "Incorrect command! Type `=help` for commands.")
 
 
 @client.event
