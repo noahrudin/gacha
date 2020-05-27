@@ -308,7 +308,7 @@ async def bbMulti(author, message):
             randCol = random.randint(0,NUM_BRONZES-1)
         id = str(int(bbSheet.cell_value(randCol, id1)))
         name = bbSheet.cell_value(randCol, name1)
-        print(name + id)
+        #print(name + id)
         desc = bbSheet.cell_value(randCol, desc1)
         star = str(int(bbSheet.cell_value(randCol, star1)))
         stitchedStarEmoji =  ':star: ' + star
