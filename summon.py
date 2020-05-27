@@ -28,9 +28,12 @@ specialSheet = wb.sheet_by_index(3)
 
 NUM_BRONZES = 15
 NUM_SILVERS = 48
+#konan
 NUM_NB_GOLDS = 72
+#juubito
 NUM_BF_GOLDS = 127
-NUM_BB_GOLDS = 120
+#pain
+NUM_BB_GOLDS = 121
 NUM_SPECIAL_GOLDS = 72
 NUM_BFS = 53
 NUM_BBS = 48
@@ -267,18 +270,19 @@ async def bfMulti(author, message):
 async def bbMulti(author, message):
     i = 1
     while i < 11:
-        #randSeed=random.randint(0,(ODDS_BB_GOLD + ODDS_BB_SILVER + ODDS_BB_BRONZE)-1)
-        randSeed=random.randint(0,(ODDS_BB_GOLD + ODDS_BB_SILVER + ODDS_BB_BRONZE + ODDS_BB_FEATURED)-1)
+        randSeed=random.randint(0,(ODDS_BB_GOLD + ODDS_BB_SILVER + ODDS_BB_BRONZE)-1)
+        #randSeed=random.randint(0,(ODDS_BB_GOLD + ODDS_BB_SILVER + ODDS_BB_BRONZE + ODDS_BB_FEATURED)-1)
         #15% gold, 62% silver, 23% bronze
-        if randSeed <= ODDS_BB_FEATURED:
-            id1 = 0
-            name1 = 1
-            desc1 = 2
-            star1 = 3
-            url1 = 4
-            colorVar = 0x0ffd500
-            randCol = random.randint(73,120)
-        if randSeed < ODDS_BB_GOLD and randSeed > ODDS_BB_FEATURED:
+        #if randSeed <= ODDS_BB_FEATURED:
+            #id1 = 0
+            #name1 = 1
+            #desc1 = 2
+            #star1 = 3
+            #url1 = 4
+            #colorVar = 0x0ffd500
+            #randCol = random.randint(73,120)
+        #if randSeed < ODDS_BB_GOLD and randSeed > ODDS_BB_FEATURED:
+        if randSeed < ODDS_BB_GOLD:
             id1 = 0
             name1 = 1
             desc1 = 2
