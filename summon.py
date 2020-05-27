@@ -278,7 +278,7 @@ async def bbMulti(author, message):
             star1 = 3
             url1 = 4
             colorVar = 0x0ffd500
-            randCol = random.randint(73,121)
+            randCol = random.randint(73,120)
         if randSeed < ODDS_BB_GOLD and randSeed > ODDS_BB_FEATURED:
             id1 = 0
             name1 = 1
@@ -308,6 +308,7 @@ async def bbMulti(author, message):
             randCol = random.randint(0,NUM_BRONZES-1)
         id = str(int(bbSheet.cell_value(randCol, id1)))
         name = bbSheet.cell_value(randCol, name1)
+        print(name + id)
         desc = bbSheet.cell_value(randCol, desc1)
         star = str(int(bbSheet.cell_value(randCol, star1)))
         stitchedStarEmoji =  ':star: ' + star
