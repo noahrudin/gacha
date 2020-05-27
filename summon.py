@@ -73,14 +73,8 @@ async def on_message(message):
         if message.author == client.user:
             return
         lock = LOCK
-        if message.content==('.test'):
-            print(str(int(nbSheet.cell_value(0,0))))
-            print(str(nbSheet.cell_value(0,1)))
-            print(str(nbSheet.cell_value(0,2)))
-            print(str(int(nbSheet.cell_value(0,3))))
-            print(str(nbSheet.cell_value(0,4)))
 
-        if message.content==('.multi nb'):
+        if message.content==('=multi nb'):
             if LOCK == "unlocked":
                 lock = "unlocked"
                 await toggleLock(lock)
@@ -94,7 +88,7 @@ async def on_message(message):
                 await waitMessage.delete(delay = 3)
                 return
         
-        if message.content==('.multi bf'):
+        if message.content==('=multi bf'):
             if LOCK == "unlocked":
                 lock = "unlocked"
                 await toggleLock(lock)
@@ -108,7 +102,7 @@ async def on_message(message):
                 await waitMessage.delete(delay = 3)
                 return
         
-        if message.content==('.multi bb'):
+        if message.content==('=multi bb'):
             if LOCK == "unlocked":
                 lock = "unlocked"
                 await toggleLock(lock)
@@ -122,7 +116,7 @@ async def on_message(message):
                 await waitMessage.delete(delay = 3)
                 return
 
-        if message.content==('.multi special'):
+        if message.content==('=multi special'):
             if LOCK == "unlocked":
                 lock = "unlocked"
                 await toggleLock(lock)
@@ -136,7 +130,7 @@ async def on_message(message):
                 await waitMessage.delete(delay = 3)
                 return
             
-        if message.content==('.help'):
+        if message.content==('=help'):
             await message.channel.send(content = "Try \n`.multi nb` for Normal Banner Summons,\n`.multi bf` for Blazing Festival Summons, \n`.multi bb` for Blazing Bash Summons, and \n `.multi special` for 7-star summon. \nOnly one multi at a time!")
 
 
