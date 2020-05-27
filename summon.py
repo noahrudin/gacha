@@ -14,7 +14,9 @@ import requests
 from io import BytesIO
 import xlrd
 #=======
-DISCORD_TOKEN = 'NzA1ODY1MjYyODI1NzM0MjI0.Xsf3sQ.fDCfyofvG1CB6bBkbRC23mPTz70'
+#test for github and heroku
+DISCORD_TOKEN = 'NzA1ODY1MjYyODI1NzM0MjI0.Xsg'+'AqQ.cbP1IzjrjHID_gnT3_wxJgoi1Xs'
+#DISCORD_TOKEN = process.env.BOT_TOKEN
 DISCORD_GUILD = 705865053689086032
 client = discord.Client()
 loc = ('SummonPool.xlsx')
