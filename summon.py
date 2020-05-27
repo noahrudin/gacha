@@ -132,8 +132,10 @@ async def on_message(message):
             
         if message.content==('=help'):
             await message.channel.send(content = "Try \n`=multi nb` for Normal Banner Summons,\n`=multi bf` for Blazing Festival Summons,\n`=multi bb` for Blazing Bash Summons, and\n`=multi special` for 7-star summon.\nOnly one multi at a time!")
-        #if message.content!=('=help') and message.content!=('=multi bb') and message.content!=('=multi bf') and message.content!=('=multi nb') and message.content!=('=multi special'):
-            #await message.channel.send(content = "Incorrect command! Type `=help` for commands.")
+        
+        if '=' in message.content:
+            if message.content!=('=help') and message.content!=('=multi bb') and message.content!=('=multi bf') and message.content!=('=multi nb') and message.content!=('=multi special'):
+                await message.channel.send(content = "Incorrect command! Type `=help` for commands.")
 
 
 @client.event
