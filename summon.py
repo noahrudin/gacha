@@ -32,11 +32,11 @@ NUM_SILVERS = 48
 NUM_NB_GOLDS = 72
 #juubito
 NUM_BF_GOLDS = 127
-#pain
-NUM_BB_GOLDS = 121
+#itachi
+NUM_BB_GOLDS = 122
 NUM_SPECIAL_GOLDS = 72
 NUM_BFS = 53
-NUM_BBS = 48
+NUM_BBS = 49
 NUM_SPECIAL = 1
 #Used for changing rates
 ODDS_BF_GOLD = 15 #default 15
