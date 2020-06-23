@@ -30,12 +30,12 @@ NUM_BRONZES = 15
 NUM_SILVERS = 48
 #konan
 NUM_NB_GOLDS = 72
-#juubito
-NUM_BF_GOLDS = 127
+#minato
+NUM_BF_GOLDS = 128
 #itachi
 NUM_BB_GOLDS = 122
 NUM_SPECIAL_GOLDS = 72
-NUM_BFS = 53
+NUM_BFS = 54
 NUM_BBS = 49
 NUM_SPECIAL = 1
 #Used for changing rates
