@@ -36,9 +36,9 @@ NUM_BFS = 55
 #shika
 NUM_BB_GOLDS = 123
 NUM_BBS = 50
-#naru?
-NUM_SPECIAL_GOLDS = 72
-NUM_SPECIAL = 1
+#anni 7vs 7vn
+NUM_SPECIAL_GOLDS = 73
+NUM_SPECIAL = 2
 #Used for changing rates
 ODDS_BF_GOLD = 15 #default 15
 ODDS_BF_SILVER = 62 #default 62
@@ -355,7 +355,7 @@ async def specialMulti(author, message):
             star1 = 3
             url1 = 4
             colorVar = 0x4ad8ff
-            randCol = 72 #7pn featured
+            randCol = random.randint(72,73) #7pn featured
         if randSeed < ODDS_SPECIAL_GOLD and randSeed > ODDS_SPECIAL_FEATURED:
             id1 = 0
             name1 = 1
