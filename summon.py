@@ -28,16 +28,16 @@ specialSheet = wb.sheet_by_index(3)
 
 NUM_BRONZES = 15
 NUM_SILVERS = 48
-#konan
-NUM_NB_GOLDS = 72
+#shikamaru
+NUM_NB_GOLDS = 73
 #ashura
-NUM_BF_GOLDS = 129
+NUM_BF_GOLDS = 130
 NUM_BFS = 55
 #maddy
-NUM_BB_GOLDS = 124
+NUM_BB_GOLDS = 125
 NUM_BBS = 51
 #anni 7vs 7vn
-NUM_SPECIAL_GOLDS = 73
+NUM_SPECIAL_GOLDS = 74
 NUM_SPECIAL = 2
 #Used for changing rates
 ODDS_BF_GOLD = 15 #default 15
@@ -355,7 +355,7 @@ async def specialMulti(author, message):
             star1 = 3
             url1 = 4
             colorVar = 0x4ad8ff
-            randCol = random.randint(72,73) #7pn featured
+            randCol = random.randint(73,74) #7vn/7vs featured
         if randSeed < ODDS_SPECIAL_GOLD and randSeed > ODDS_SPECIAL_FEATURED:
             id1 = 0
             name1 = 1
