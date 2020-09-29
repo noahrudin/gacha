@@ -30,9 +30,9 @@ NUM_BRONZES = 15
 NUM_SILVERS = 48
 #shikamaru
 NUM_NB_GOLDS = 73
-#ashura
-NUM_BF_GOLDS = 130
-NUM_BFS = 55
+#sasuke
+NUM_BF_GOLDS = 131
+NUM_BFS = 56
 #darui
 NUM_BB_GOLDS = 126
 NUM_BBS = 52
