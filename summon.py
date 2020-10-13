@@ -33,9 +33,9 @@ NUM_NB_GOLDS = 73
 #sasuke
 NUM_BF_GOLDS = 131
 NUM_BFS = 56
-#darui
-NUM_BB_GOLDS = 126
-NUM_BBS = 52
+#shinden naruto
+NUM_BB_GOLDS = 127
+NUM_BBS = 53
 #anni 7vs 7vn
 NUM_SPECIAL_GOLDS = 74
 NUM_SPECIAL = 2
