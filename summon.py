@@ -30,9 +30,9 @@ NUM_BRONZES = 15
 NUM_SILVERS = 48
 #shikamaru
 NUM_NB_GOLDS = 73
-#sasuke
-NUM_BF_GOLDS = 131
-NUM_BFS = 56
+#OT Naru
+NUM_BF_GOLDS = 132
+NUM_BFS = 57
 #shinden naruto
 NUM_BB_GOLDS = 127
 NUM_BBS = 53
