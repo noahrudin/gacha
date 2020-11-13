@@ -33,9 +33,9 @@ NUM_NB_GOLDS = 73
 #OT Naru
 NUM_BF_GOLDS = 132
 NUM_BFS = 57
-#shinden naruto
-NUM_BB_GOLDS = 127
-NUM_BBS = 53
+#rinne v2
+NUM_BB_GOLDS = 128
+NUM_BBS = 54
 #anni 7vs 7vn
 NUM_SPECIAL_GOLDS = 74
 NUM_SPECIAL = 2
