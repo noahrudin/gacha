@@ -28,7 +28,7 @@ rsa==4.0
 six==1.14.0
 toml==0.10.0
 urllib3==1.25.9
-websockets==8.1
+websockets==9.1
 wrapt==1.12.1
 xlrd==1.2.0
 yarl==1.4.2
